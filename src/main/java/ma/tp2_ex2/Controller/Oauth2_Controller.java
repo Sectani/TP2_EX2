@@ -44,12 +44,6 @@ public class Oauth2_Controller {
 
         // recupérer Scopes de l'utilisateur
         String scopes =  authenticate.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.joining(" "));
-        /*List<String> scopes = authenticate.getAuthorities().stream()
-                .map(GrantedAuthority::getAuthority)
-                .collect(Collectors.toList()); // Collect as a List<String>
-
-         */
-
 
         JwtClaimsSet jwtClaimsSet_Access_token =  JwtClaimsSet.builder()
                 .issuer("MS_sec")
